@@ -21,7 +21,7 @@
 
 				<div v-html="mdToHtml($page.post.content)" class="content" />
 
-				<g-image :src="GRIDSOME_API_URL + $page.post.thumb.url" class="thumbnail" />
+				<g-image :src="require(`@/assets/uploads/${$page.post.thumb.name}`)" class="thumbnail" />
 			</div>
 		</div>
 	</Layout>
@@ -37,6 +37,7 @@ query  ($id:ID!){
     thumb{
       id
       url
+			name
     }
     categories{
       id

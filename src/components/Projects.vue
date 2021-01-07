@@ -2,7 +2,7 @@
 	<div class="projects">
 		<div class="project" v-for="item in list" :key="item.node.id">
 			<g-link :to="'/project/' + item.node.id" class="project-link">
-				<g-image :src="GRIDSOME_API_URL + item.node.thumb.url" :alt="item.node.title" class="thumbnail" />
+				<g-image :src="require(`@/assets/uploads/${item.node.thumb.name}`)" :alt="item.node.title" class="thumbnail" />
 				<h3 class="project-title">{{ item.node.title }}</h3>
 				<div class="categories">
 					<span class="category" v-for="(item, index) in item.node.categories" :key="index">{{ item.title }}</span>
